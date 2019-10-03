@@ -1,0 +1,161 @@
+{
+	"info": {
+		"_postman_id": "c81d549c-df6f-4d16-abda-1bd6c16eebbd",
+		"name": "Blockchain_nodejs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "chain",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3003/blockchain/nodes/resolve",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"blockchain",
+						"nodes",
+						"resolve"
+					]
+				},
+				"description": "Get Full chain"
+			},
+			"response": []
+		},
+		{
+			"name": "mine",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3003/blockchain/chain",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"blockchain",
+						"chain"
+					]
+				},
+				"description": "Mine a new Block"
+			},
+			"response": []
+		},
+		{
+			"name": "resolve",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3003/blockchain/nodes/resolve",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"blockchain",
+						"nodes",
+						"resolve"
+					]
+				},
+				"description": "Resolve Conflict among nodes in the network"
+			},
+			"response": []
+		},
+		{
+			"name": "transaction",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"sender\": \"dkfjldfjkad\",\n\t\"recipient\": \"some-one\",\n\t\"amount\":5\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3003/blockchain/transaction/new",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"blockchain",
+						"transaction",
+						"new"
+					]
+				},
+				"description": "Add a new transaction"
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"nodes\": [\"http//127.0.0.1:5001\"]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3003/blockchain/nodes/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"blockchain",
+						"nodes",
+						"register"
+					]
+				},
+				"description": "Register a new node in the blockchain network"
+			},
+			"response": []
+		}
+	]
+}
